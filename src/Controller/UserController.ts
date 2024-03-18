@@ -6,7 +6,7 @@ const UserController = {
     const { matricNumber, firstName, lastName, email } = req.body
     Student.create({ matricNumber, firstName, lastName, email })
       .then(result => {
-        res.status(201).json({ result, message: 'success' })
+        res.status(201).json({ createdStudent: result, message: 'success' })
       })
       .catch(err => {
         res.status(500).json({ error: err, message: 'An error occured' })
