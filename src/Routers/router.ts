@@ -13,5 +13,5 @@ router.get('/events', EventController.getEvents)
 router.post('/events', EventController.createEvent)
 router.post('/student', UserController.createStudent)
 router.get('/student', UserController.getSingleStudent)
-
+router.get('/students', UserController.getStudents)
 export default router

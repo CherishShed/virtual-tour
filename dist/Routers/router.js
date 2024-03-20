@@ -15,4 +15,5 @@ router.get('/events', EventController_1.default.getEvents);
 router.post('/events', EventController_1.default.createEvent);
 router.post('/student', UserController_1.default.createStudent);
 router.get('/student', UserController_1.default.getSingleStudent);
+router.get('/students', UserController_1.default.getStudents);
 exports.default = router;

@@ -36,5 +36,17 @@ const UserController = {
             return res.status(500).json({ error, message: 'An error occured' });
         }
     }),
+    getStudents: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const students = yield database_1.Student.find({});
+            if (!students) {
+                return res.status(404).json({ message: 'Students not found' });
+            }
+            return res.status(200).json({ message: 'Successful', students });
+        }
+        catch (error) {
+            return res.status(500).json({ error, message: 'An error occured' });
+        }
+    }),
 };
 exports.default = UserController;

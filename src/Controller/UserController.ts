@@ -26,6 +26,17 @@ const UserController = {
       return res.status(500).json({ error, message: 'An error occured' })
     }
   },
+  getStudents: async (req: Request, res: Response) => {
+    try {
+      const students = await Student.find({})
+      if (!students) {
+        return res.status(404).json({ message: 'Students not found' })
+      }
+      return res.status(200).json({ message: 'Successful', students })
+    } catch (error) {
+      return res.status(500).json({ error, message: 'An error occured' })
+    }
+  },
 }
 
 export default UserController
